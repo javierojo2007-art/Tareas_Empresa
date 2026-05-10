@@ -15,16 +15,20 @@ nav {
     background-color: #34495e;
     text-align: center;
     padding: 10px;
+    gap: 20px;
+    justify-content: center;
 }
 
 nav a {
     color: white;
     margin: 10px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 nav a:hover {
     text-decoration: underline;
+    color: blue;
 }
 
 section {
@@ -34,11 +38,37 @@ section {
     border-radius: 10px;
 }
 
-img {
-    width: 150px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.sobre-mi-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
+.sobre-mi-contenedor img {
+    width: 170px;
+    border-radius: 10px;
+}
+
+
+.contenedor-proyectos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background-color: #e5e7eb;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
 
 form {
     display: flex;
@@ -69,4 +99,18 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #ddd;
+}
+
+.redes-sociales {
+    margin-top: 10px;
+}
+
+.redes-sociales a {
+    color: white;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.redes-sociales a:hover {
+    color: #60a5fa;
 }
