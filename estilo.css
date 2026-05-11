@@ -1,7 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: white;
+}
+
+#boton-tema {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 header {
@@ -51,9 +68,9 @@ section {
 
 
 .contenedor-proyectos {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .tarjeta {
@@ -113,4 +130,39 @@ footer {
 
 .redes-sociales a:hover {
     color: #60a5fa;
+}
+
+.dark-mode {
+    background-color: #111827;
+    color: white;
+}
+
+.dark-mode section {
+    background-color: #1f2937;
+}
+
+.dark-mode .tarjeta {
+    background-color: #374151;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #374151;
+    color: white;
+    border: 1px solid white;
+}
+
+
+@media (max-width: 768px) {
+
+    .sobre-mi-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
