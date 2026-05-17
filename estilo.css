@@ -205,3 +205,41 @@ footer {
 .dark-mode .tarjeta-estudio small {
     color: #d1d5db;
 }
+
+.github-buscador {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#contenedor-repos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-repo {
+    background-color: #e5e7eb;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.tarjeta-repo:hover {
+    transform: scale(1.03);
+}
+
+.tarjeta-repo a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.tarjeta-repo p {
+    margin-top: 10px;
+}
+
+.dark-mode .tarjeta-repo {
+    background-color: #374151;
+}

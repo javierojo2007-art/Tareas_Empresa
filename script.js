@@ -61,3 +61,47 @@ function crearTarjetaEstudio(estudio) {
     tarjeta.appendChild(descripcion);
     contenedorEstudios.appendChild(tarjeta);
 }
+
+const botonGithub = document.getElementById("buscar-github");
+const inputGithub = document.getElementById("usuario-github");
+const contenedorRepos = document.getElementById("contenedor-repos");
+
+botonGithub.addEventListener("click", () => {
+    const usuario = inputGithub.value;
+    obtenerRepositorios(usuario);
+});
+
+async function obtenerRepositorios(usuario) {
+    const url = `https://api.github.com/users/${usuario}/repos`;
+    try {
+        const respuesta = await fetch(url);
+        const repositorios = await respuesta.json();
+        contenedorRepos.innerHTML = "";
+        repositorios.forEach(repo => {
+            crearTarjetaRepo(repo);
+        });
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+function crearTarjetaRepo(repo) {
+    const tarjeta = document.createElement("article");
+    tarjeta.classList.add("tarjeta-repo");
+    const titulo = document.createElement("h3");
+    const enlace = document.createElement("a");
+    enlace.href = repo.html_url;
+    enlace.textContent = repo.name;
+    enlace.target = "_blank";
+    titulo.appendChild(enlace);
+    const descripcion = document.createElement("p");
+    if (repo.description === null) {
+        descripcion.textContent = "Repositorio sin descripción";
+    } else {
+        descripcion.textContent = repo.description;
+    }
+
+    tarjeta.appendChild(titulo);
+    tarjeta.appendChild(descripcion);
+    contenedorRepos.appendChild(tarjeta);
+}
